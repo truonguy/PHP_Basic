@@ -1,0 +1,34 @@
+typeof Aura === "undefined" && (Aura = {});
+
+(function() { 
+	 function initAccessResources() {
+			 $A.componentService.addModule('markup://force:customPerms', 'force/customPerms', ['exports'], null, {}); 
+			 $A.componentService.addModule('markup://force:userPerms', 'force/userPerms', ['exports'], null, {}); 
+	 };
+	 if(Aura.frameworkJsReady)initAccessResources();else{Aura.beforeFrameworkInit=Aura.beforeFrameworkInit||[],Aura.beforeFrameworkInit.push(initAccessResources)}
+})(); 
+Aura.StaticResourceMap = {"EngageAlertsDownload":{"pi":1687621848000},"Outlook":{"pi":1698813552000},"SaveImage":{"":1687321394000},"fullcalendarcss":{"":1687321396000},"SNA_VTCE_Portfolio1_sf_default_cdn_nlqkf":{"":1689067598000},"JQuery_Ui_Touch_Punch":{"":1687321392000},"FileSaver":{"":1687321390000},"vtce_resource":{"":1687321396000},"LeadDeck":{"pi":1698813550000},"VTCLogoHeader":{"":1687321395000},"JQuery_UI_1_13_2_Min":{"":1687321390000},"jquery_2_1_1_js":{"pi":1687621848000},"SNA_referral_vtca1_sf_default_cdn_bNI3w":{"":1689067920000},"addToNurtureListIcon":{"pi":1687621848000},"VTCLogoFooter":{"":1687321395000},"cssreset":{"":1687321395000},"dnd_jquery_min":{"":1687321395000},"PDFConfirmStudent":{"":1687321392000},"dnd_dragtable":{"":1687321395000},"successful_transaction_icon":{"":1687321396000},"ckeditorSalesReach":{"pi":1698813552000},"jquery341min":{"":1687321396000},"xlsxPopulate":{"":1687321397000},"dnd_jquery_ui_min":{"":1687321396000},"font_awesome_4_2_0":{"pi":1687621848000},"Promise":{"pi":1698813552000},"pageViews":{"pi":1687621848000},"S360_about":{"":1687321392000},"S360_banner":{"":1687321394000},"PardotRedirectSuccessMessageImg":{"pi":1687621848000},"LegacyPardot":{"pi":1698813550000},"style":{"":1687321396000},"SCE_LicenseAssignmentPage":{"pi":1687621848000},"SalesEdgeErrPage":{"pi":1687621848000},"EngageSalesTools":{"pi":1698813550000},"cropme":{"":1687321395000},"jquery_time_ago":{"pi":1687621848000},"multilineToastCSS":{"":1687321396000},"jquery_ui_1_11_1_custom_has_dialog":{"pi":1687621848000},"dnd_jquery_dragtable_js":{"":1687321395000},"MarketingActions":{"pi":1698813551000},"MicroCampaign":{"pi":1698813551000},"moment":{"":1687321396000},"Lead_Deck":{"pi":1687621848000},"jquery_ui_1_12_1":{"pi":1687621848000},"jQuery_UI":{"":1687321396000},"siteAsset_549fa49f07be4f589adda1536212127d":{"":1687321396000},"FeatureFlagDefaults":{"pi":1687621848000},"jQuery3":{"":1687321396000},"loadingSpinner":{"pi":1687621848000},"downloadjs":{"":1687321396000},"Mobile_Design_Templates":{"pi":1687621848000},"PardotLightningDesignSystem_unversioned":{"pi":1687621848000},"SiteSamples":{"":1687321395000},"customfullcalendarjs":{"":1687321395000},"ProximaNovaSoft":{"pi":1687621848000},"SNA_VTCE_Portfolio1_sf_default_cdn_Xgo6w":{"":1687321394000},"EngagementHistory":{"pi":1698813550000},"Long_Course_Cert":{"":1687321392000},"icon_utility":{"pi":1687621848000},"S360_laurel":{"":1687321394000},"Error":{"pi":1698813550000},"inclusivePayload":{"pi":1687621848000},"S360_avatar_default":{"":1687321392000},"Short_Course_Img":{"":1687321394000},"Image_Folder":{"":1687321390000}};
+
+(function() {
+function initResourceGVP() {
+if (!$A.getContext() || !$A.get('$Resource')) {
+$A.addValueProvider('$Resource',
+{
+merge : function() {},
+isStorable : function() { return false; },
+get : function(resource) {
+var modStamp, rel, abs, name, ns;
+var nsDelim = resource.indexOf('__');
+if (nsDelim >= 0) { ns = resource.substring(0, nsDelim); name = resource.substring(nsDelim + 2); } else { name = resource; }
+var srMap = Aura.StaticResourceMap[name];
+modStamp = srMap && srMap[ns = ns || Object.keys(srMap)[0]];
+if (!modStamp) { return; }
+rel = $A.get('$SfdcSite.pathPrefix');
+abs = $A.get('$Absolute.url');
+return [(abs || rel || ''), '/resource/', modStamp, '/', ns === '' ? name : ns + '__' + name].join('');
+}
+});
+}
+}
+if(Aura.frameworkJsReady)initResourceGVP();else{Aura.beforeFrameworkInit=Aura.beforeFrameworkInit||[],Aura.beforeFrameworkInit.push(initResourceGVP)}
+})();
